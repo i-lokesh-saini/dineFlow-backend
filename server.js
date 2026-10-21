@@ -21,10 +21,17 @@ app.use("/api/auth", authRoutes);
 
 
 
+
+
 app.use("/health", (req, res) => {
     res.json({ message: "health ok " })
     res.send("DineFlow API is healthy");
 })
+
+app.use("/", (req, res) => {
+    res.send("DineFlow backend is working");
+})
+
 
 
 
