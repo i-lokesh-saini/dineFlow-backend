@@ -24,7 +24,6 @@ app.use("/api/auth", authRoutes);
 
 
 app.use("/health", (req, res) => {
-    res.json({ message: "health ok " })
     res.send("DineFlow API is healthy");
 })
 
