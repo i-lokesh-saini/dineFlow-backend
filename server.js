@@ -10,7 +10,7 @@ db();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "*",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
@@ -18,6 +18,13 @@ app.use(cors({
 
 
 app.use("/api/auth", authRoutes);
+
+
+
+app.use("/health", (req, res) => {
+    res.json({ message: "health ok " })
+    res.send("DineFlow API is healthy");
+})
 
 
 
